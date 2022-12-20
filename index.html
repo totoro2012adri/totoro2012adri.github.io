@@ -20,7 +20,7 @@
 </head>
 <body>
   <!-- Contenido de la página -->
-  <div id="page0" style="display: block;" class="active">
+  <div id="page0" class="page" style="display: block;" class="active">
   <h1>Choose Your Own Adventure</h1>
   <p>Bienvenido a esta aventura interactiva. Elige tu próxima acción:</p>
   <div class="choice" data-next="page1">
@@ -32,7 +32,7 @@
   </div>
 
   <!-- Páginas escondidas -->
-  <div id="page1" style="display: none;">
+  <div id="page1" class="page" style="display: none;">
     <h2>Playa</h2>
     <p>Has llegado a la playa. ¿Qué quieres hacer ahora?</p>
     <div class="choice" data-next="page3">
@@ -42,7 +42,7 @@
       Tomar el sol en la arena
     </div>
   </div>
-  <div id="page2" style="display: none;">
+  <div id="page2" class="page" style="display: none;">
     <h2>Montaña</h2>
     <p>Has llegado a la montaña. ¿Qué quieres hacer ahora?</p>
     <div class="choice" data-next="page5">
@@ -52,7 +52,7 @@
       Hacer un picnic
     </div>
   </div>
-  <div id="page3" style="display: none;">
+  <div id="page3" class="page" style="display: none;">
     <h2>Nadar en el mar</h2>
     <p>Has decidido nadar en el mar. ¡Qué divertido! ¿Qué quieres hacer a continuación?</p>
     <div class="choice" data-next="page1">
@@ -62,7 +62,42 @@
       Ir a casa
     </div>
   </div>
-  <!-- ... más páginas aquí ... -->
+  <div id="page4" class="page" style="display: none;">
+  <h2>Tomar el sol en la arena</h2>
+  <p>Has decidido tomar el sol en la arena. ¡Qué relajante! ¿Qué quieres hacer a continuación?</p>
+  <div class="choice" data-next="page1">
+    Volver a la playa
+  </div>
+  <div class="choice" data-next="page7">
+    Ir a casa
+  </div>
+</div>
+<div id="page5" class="page" style="display: none;">
+  <h2>Hacer senderismo</h2>
+  <p>Has decidido hacer senderismo. ¡Qué emocionante! ¿Qué quieres hacer a continuación?</p>
+  <div class="choice" data-next="page2">
+    Volver a la montaña
+  </div>
+  <div class="choice" data-next="page7">
+    Ir a casa
+  </div>
+</div>
+<div id="page6" class="page" style="display: none;">
+  <h2>Hacer un picnic</h2>
+  <p>Has decidido hacer un picnic. ¡Qué delicioso! ¿Qué quieres hacer a continuación?</p>
+  <div class="choice" data-next="page2">
+    Volver a la montaña
+  </div>
+  <div class="choice" data-next="page7">
+    Ir a casa
+  </div>
+</div>
+<h2>Ir a casa</h2>
+  <p>Has decidido ir a casa. ¡Qué cómodo! ¿Qué quieres hacer a continuación?</p>
+  <div class="choice" data-next="page0">
+    Volver al principio
+  </div>
+</div>
 </body>
 </html>
 <!-- ... el código HTML anterior aquí ... -->
