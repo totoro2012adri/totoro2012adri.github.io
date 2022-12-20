@@ -3,18 +3,43 @@
 <head>
   <title>Choose Your Own Adventure</title>
   <style>
-    /* Estilos para la página */
     body {
-      font-family: sans-serif;
-      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      background-color: #f2f2f2;
+    }
+
+    h1, h2 {
+      font-family: 'Oswald', sans-serif;
+      color: #00b8d4;
     }
 
     .choice {
       display: inline-block;
-      border: 1px solid black;
+      border: 2px solid #00b8d4;
       padding: 10px;
       margin: 10px;
       cursor: pointer;
+      transition: all 0.3s;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .choice:hover {
+      background-color: #00b8d4;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        width: 90%;
+        margin: 20px auto;
+      }
+
+      .choice {
+        width: 100%;
+      }
     }
   </style>
 </head>
