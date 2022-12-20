@@ -20,6 +20,7 @@
 </head>
 <body>
   <!-- Contenido de la página -->
+  <div id="page0" style="display: block;" class="active">
   <h1>Choose Your Own Adventure</h1>
   <p>Bienvenido a esta aventura interactiva. Elige tu próxima acción:</p>
   <div class="choice" data-next="page1">
@@ -28,9 +29,10 @@
   <div class="choice" data-next="page2">
     Ir a la montaña
   </div>
+  </div>
 
   <!-- Páginas escondidas -->
-  <div id="page1" style="display: block;" class="active">
+  <div id="page1" style="display: block;">
     <h2>Playa</h2>
     <p>Has llegado a la playa. ¿Qué quieres hacer ahora?</p>
     <div class="choice" data-next="page3">
@@ -66,6 +68,7 @@
 <!-- ... el código HTML anterior aquí ... -->
 <script>
   // Obtener todas las opciones de elección
+  // Obtener todas las opciones de elección
   const choices = document.querySelectorAll('.choice');
 
   // Añadir un controlador de eventos "click" a cada opción
@@ -75,10 +78,12 @@
       const nextPageId = e.target.dataset.next;
       const nextPage = document.getElementById(nextPageId);
 
-      // Ocultar la página actual y mostrar la página siguiente
-      document.querySelector('.active').style.display = 'none';
+      // Ocultar todas las páginas y mostrar sólo la página siguiente
+      document.querySelectorAll('.page').forEach(page => {
+        page.style.display = 'none';
+      });
       nextPage.style.display = 'block';
-      nextPage.classList.add('active');
     });
   });
+
 </script>
