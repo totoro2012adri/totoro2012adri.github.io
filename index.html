@@ -1,10 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mi sitio web</title>
+  <title>Choose Your Own Adventure</title>
+  <style>
+    /* Estilos para la página */
+    body {
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    .choice {
+      display: inline-block;
+      border: 1px solid black;
+      padding: 10px;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Bienvenido a mi sitio web</h1>
-  <p>Este es mi primer sitio web en GitHub Pages.</p>
+  <!-- Contenido de la página -->
+  <h1>Choose Your Own Adventure</h1>
+  <p>Bienvenido a esta aventura interactiva. Elige tu próxima acción:</p>
+  <div class="choice" data-next="page1">
+    Ir a la playa
+  </div>
+  <div class="choice" data-next="page2">
+    Ir a la montaña
+  </div>
+
+  <!-- Páginas escondidas -->
+  <div id="page1" style="display: none;">
+    <h2>Playa</h2>
+    <p>Has llegado a la playa. ¿Qué quieres hacer ahora?</p>
+    <div class="choice" data-next="page3">
+      Nadar en el mar
+    </div>
+    <div class="choice" data-next="page4">
+      Tomar el sol en la arena
+    </div>
+  </div>
+  <div id="page2" style="display: none;">
+    <h2>Montaña</h2>
+    <p>Has llegado a la montaña. ¿Qué quieres hacer ahora?</p>
+    <div class="choice" data-next="page5">
+      Hacer senderismo
+    </div>
+    <div class="choice" data-next="page6">
+      Hacer un picnic
+    </div>
+  </div>
+  <div id="page3" style="display: none;">
+    <h2>Nadar en el mar</h2>
+    <p>Has decidido nadar en el mar. ¡Qué divertido! ¿Qué quieres hacer a continuación?</p>
+    <div class="choice" data-next="page1">
+      Volver a la playa
+    </div>
+    <div class="choice" data-next="page7">
+      Ir a casa
+    </div>
+  </div>
+  <!-- ... más páginas aquí ... -->
 </body>
 </html>
+<!-- ... el código HTML anterior aquí ... -->
+<script>
+  // Obtener todas las opciones de elección
+  const choices = document.querySelectorAll('.choice');
+
+  // Añadir un controlador de eventos "click" a cada opción
+  choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+      // Obtener la página a la que se dirige la opción
+      const nextPageId = e.target.dataset.next;
+      const nextPage = document.getElementById(nextPageId);
+
+      // Ocultar la página actual y mostrar la página siguiente
+      document.querySelector('.active').style.display = 'none';
+      nextPage.style.display = 'block';
+      nextPage.classList.add('active');
+    });
+  });
+</script>
